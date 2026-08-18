@@ -1,5 +1,12 @@
 // Package palettes provides the official Leraniode colour palettes built on
 // wondertone.
+//
+// Available palettes:
+//
+//   - Leraniode  — Leraniode full base palette
+//   - LeraScale  — Leraniode pink identity scale
+//   - NiodeScale — Leraniode purple identity scale
+//   - Clarity    — Leraniode cyan-to-blue gradient scale
 package palettes
 
 import (

@@ -24,7 +24,7 @@ var Blaze = register(tone.New(
 	tone.Named("blaze"),
 ))
 
-// Dusk is a rich amber-orange — the colour of last light.
+// Dusk is a rich amber-orange — the color of last light.
 var Dusk = register(tone.New(
 	tone.Light(74),
 	tone.Vibrancy(100),

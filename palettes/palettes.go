@@ -1,4 +1,4 @@
-// Package palettes provides the official Leraniode colour palettes built on
+// Package palettes provides the official Leraniode color palettes built on
 // wondertone.
 //
 // Available palettes:

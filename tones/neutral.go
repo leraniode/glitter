@@ -87,7 +87,7 @@ var Veil = register(tone.New(
 	tone.Named("veil"),
 ))
 
-// Slate is the page base — the main background colour.
+// Slate is the page base — the main background color.
 var Slate = register(tone.New(
 	tone.Light(15),
 	tone.Vibrancy(23),

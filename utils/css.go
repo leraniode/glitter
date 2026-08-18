@@ -14,7 +14,7 @@ type CSSOptions struct {
 	// Prefix is prepended to every variable name, e.g. "--color".
 	// Default: "--".
 	Prefix string
-	// Format selects the colour function written as the value.
+	// Format selects the color function written as the value.
 	// One of: "hex" (default), "oklch", "rgb".
 	Format string
 	// Indent is the indentation string for each declaration. Default: "  ".
@@ -139,7 +139,7 @@ func SCSSMap(tones []tone.Tone, mapName string, opts CSSOptions) string {
 	return b.String()
 }
 
-// TailwindTheme renders a Tailwind CSS v3/v4 theme colour fragment
+// TailwindTheme renders a Tailwind CSS v3/v4 theme color fragment
 // suitable for pasting into tailwind.config or @theme.
 //
 //	--color-lera: #f24986;

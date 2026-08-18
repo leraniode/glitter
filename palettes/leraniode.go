@@ -5,7 +5,7 @@ import (
 	"github.com/leraniode/wondertone/palette"
 )
 
-// Leraniode is the official base palette of the Leraniode organisation.
+// Leraniode is the official base palette of the Leraniode organization.
 // Identity: Lera (core pink) + Niode (core purple) + Clarity (blended cyan-blue).
 // Accents: warm and cool tones with unique Leraniode names.
 // Neutrals: violet-tinted, darker than standard palettes.

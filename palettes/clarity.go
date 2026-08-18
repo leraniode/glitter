@@ -48,7 +48,7 @@ var clarityDeep = tone.New(
 
 // Clarity is the full Clarity gradient palette — the mystical glow of Leraniode.
 // Five tones from warm teal-cyan through deep electric blue.
-// Clarity is not one colour. It is a gradient lived across five tones.
+// Clarity is not one color. It is a gradient lived across five tones.
 // Hue anchor: ~182–262° (teal → sky → sapphire → blue → deep).
 var Clarity = register(palette.New("clarity").
 	Description("The clarity palette. Cyan-to-blue gradient of Leraniode.").

@@ -9,10 +9,13 @@ import (
 )
 
 func TestByMood(t *testing.T) {
-	warm := utils.ByMood(tones.All(), "warm")
-	for _, tn := range warm {
-		if tn.Mood() != "warm" {
-			t.Errorf("expected mood warm, got %q", tn.Mood())
+	quiet := utils.ByMood(tones.All(), "quiet")
+	if len(quiet) == 0 {
+		t.Fatal("expected at least one quiet-mood tone")
+	}
+	for _, tn := range quiet {
+		if tn.Mood() != "quiet" {
+			t.Errorf("expected mood quiet, got %q", tn.Mood())
 		}
 	}
 }
@@ -51,9 +54,9 @@ func TestNames(t *testing.T) {
 
 func TestFind(t *testing.T) {
 	got, ok := utils.Find(tones.All(), func(tn tone.Tone) bool {
-		return tn.Name() == "ember"
+		return tn.Name() == "confirmed"
 	})
-	if !ok || got.Name() != "ember" {
-		t.Errorf("Find ember failed")
+	if !ok || got.Name() != "confirmed" {
+		t.Errorf("Find confirmed failed")
 	}
 }

@@ -2,114 +2,73 @@ package tones
 
 import "github.com/leraniode/wondertone/tone"
 
-// Neutral scale — violet-tinted, dark-first.
-// Darker than Catppuccin Mocha. Designed for Leraniode's deep visual identity.
-// Hue anchor: ~284° (violet-leaning neutral).
+// Neutral scale — dark-only, one recipe: hue and vibrancy stay fixed at every
+// step, only Light changes. Hue anchor: 296° (matches spectrum.violet in
+// palettes/spectrum.go, so neutrals are visibly the same identity, just
+// desaturated) — not an unrelated scale invented on its own.
+//
+// Seven roles, darkest to lightest: page, panel, surface, border, muted,
+// secondary, primary.
 
-// Ink is the primary text tone — near-white with violet warmth.
-var Ink = register(tone.New(
-	tone.Light(82),
-	tone.Vibrancy(45),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("ink"),
+// Page is the page background — the darkest surface.
+var Page = register(tone.New(
+	tone.Light(8),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.page"),
 ))
 
-// Mute is secondary text — slightly dimmed, still readable.
-var Mute = register(tone.New(
-	tone.Light(70),
-	tone.Vibrancy(30),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("mute"),
+// Panel is a raised surface one step above the page.
+var Panel = register(tone.New(
+	tone.Light(12),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.panel"),
 ))
 
-// Ash is tertiary text — visibly quieter, for metadata and captions.
-var Ash = register(tone.New(
-	tone.Light(61),
-	tone.Vibrancy(22),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("ash"),
-))
-
-// Dim is the top overlay — for subdued interactive states.
-var Dim = register(tone.New(
-	tone.Light(53),
-	tone.Vibrancy(17),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("dim"),
-))
-
-// Haze is mid overlay — separators, placeholder text.
-var Haze = register(tone.New(
-	tone.Light(45),
-	tone.Vibrancy(12),
-	tone.Hue(297),
-	tone.Moody("focused"),
-	tone.Named("haze"),
-))
-
-// Ghost is low overlay — faintest visible presence.
-var Ghost = register(tone.New(
-	tone.Light(35),
-	tone.Vibrancy(15),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("ghost"),
-))
-
-// Rim is the highest surface — raised elements, hover states.
-var Rim = register(tone.New(
-	tone.Light(27),
-	tone.Vibrancy(17),
-	tone.Hue(297),
-	tone.Moody("vivid"),
-	tone.Named("rim"),
-))
-
-// Shell is mid surface — cards, input backgrounds.
-var Shell = register(tone.New(
-	tone.Light(21),
-	tone.Vibrancy(19),
-	tone.Hue(297),
-	tone.Moody("urgent"),
-	tone.Named("shell"),
-))
-
-// Veil is the lowest surface — subtle panel backgrounds.
-var Veil = register(tone.New(
+// Surface is a card or input background.
+var Surface = register(tone.New(
 	tone.Light(17),
-	tone.Vibrancy(21),
-	tone.Hue(297),
-	tone.Moody("urgent"),
-	tone.Named("veil"),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.surface"),
 ))
 
-// Slate is the page base — the main background color.
-var Slate = register(tone.New(
-	tone.Light(15),
-	tone.Vibrancy(23),
-	tone.Hue(297),
-	tone.Moody("urgent"),
-	tone.Named("slate"),
+// Border is a hairline or dividing edge.
+var Border = register(tone.New(
+	tone.Light(28),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.border"),
 ))
 
-// Deep is below the base — panels, sidebars, drawers.
-var Deep = register(tone.New(
-	tone.Light(13),
-	tone.Vibrancy(27),
-	tone.Hue(297),
-	tone.Moody("urgent"),
-	tone.Named("deep"),
+// Muted is tertiary text — hints, metadata, timestamps.
+var Muted = register(tone.New(
+	tone.Light(55),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.muted"),
 ))
 
-// Abyss is the darkest neutral — outermost chrome, true depth.
-var Abyss = register(tone.New(
-	tone.Light(11),
-	tone.Vibrancy(30),
-	tone.Hue(297),
-	tone.Moody("urgent"),
-	tone.Named("abyss"),
+// Secondary is body-adjacent text — captions, descriptions.
+var Secondary = register(tone.New(
+	tone.Light(70),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.secondary"),
+))
+
+// Primary is the primary text color — near-white with a whisper of violet.
+var Primary = register(tone.New(
+	tone.Light(88),
+	tone.Vibrancy(10),
+	tone.Hue(296),
+	tone.Moody("quiet"),
+	tone.Named("neutral.primary"),
 ))

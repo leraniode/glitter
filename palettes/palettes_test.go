@@ -14,7 +14,7 @@ func TestAll(t *testing.T) {
 	for _, p := range palettes.All() {
 		names[p.Name()] = true
 	}
-	for _, want := range []string{"lera", "niode", "clarity", "leraniode"} {
+	for _, want := range []string{"spectrum", "leraniode"} {
 		if !names[want] {
 			t.Errorf("missing palette %q", want)
 		}
@@ -23,21 +23,35 @@ func TestAll(t *testing.T) {
 
 func TestLeraniodeContainsCores(t *testing.T) {
 	p := palettes.Leraniode
-	for _, name := range []string{"lera", "niode", "clarity.sky", "ember", "ink", "abyss"} {
+	for _, name := range []string{"spectrum.violet", "spectrum.cyan", "confirmed", "neutral.page", "neutral.primary"} {
 		if !p.Has(name) {
 			t.Errorf("Leraniode missing tone %q", name)
 		}
 	}
 }
 
-func TestScalesSize(t *testing.T) {
-	if n := len(palettes.LeraScale.All()); n != 5 {
-		t.Errorf("LeraScale expected 5 tones, got %d", n)
+func TestSpectrumSize(t *testing.T) {
+	if n := len(palettes.Spectrum.All()); n != 5 {
+		t.Errorf("Spectrum expected 5 tones, got %d", n)
 	}
-	if n := len(palettes.NiodeScale.All()); n != 5 {
-		t.Errorf("NiodeScale expected 5 tones, got %d", n)
+}
+
+func TestGradientIsComputed(t *testing.T) {
+	g := palettes.Gradient(9)
+	if len(g) != 9 {
+		t.Fatalf("expected 9 gradient stops, got %d", len(g))
 	}
-	if n := len(palettes.Clarity.All()); n != 5 {
-		t.Errorf("Clarity expected 5 tones, got %d", n)
+	if g[0].Hue() != 190 {
+		t.Errorf("expected gradient to start at cyan (190°), got %.0f", g[0].Hue())
+	}
+	if g[len(g)-1].Hue() != 342 {
+		t.Errorf("expected gradient to end at pink (342°), got %.0f", g[len(g)-1].Hue())
+	}
+	// Every stop should stay reasonably vivid — routed through the named
+	// waypoints, not cut straight across the middle of the arc.
+	for _, tn := range g {
+		if tn.Vibrancy() < 60 {
+			t.Errorf("stop at hue %.0f desaturated to vibrancy %.0f — gradient is cutting through the middle again", tn.Hue(), tn.Vibrancy())
+		}
 	}
 }

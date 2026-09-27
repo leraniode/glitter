@@ -3,10 +3,8 @@
 //
 // Available palettes:
 //
-//   - Leraniode  — Leraniode full base palette
-//   - LeraScale  — Leraniode pink identity scale
-//   - NiodeScale — Leraniode purple identity scale
-//   - Clarity    — Leraniode cyan-to-blue gradient scale
+//   - Leraniode — Leraniode full base palette (arc + accent + neutrals)
+//   - Spectrum  — the identity arc itself: cyan through pink, one continuous line
 package palettes
 
 import (

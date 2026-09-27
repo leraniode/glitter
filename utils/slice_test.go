@@ -10,9 +10,9 @@ import (
 
 func TestToneByName(t *testing.T) {
 	all := tones.All()
-	got, ok := utils.ToneByName(all, "ember")
-	if !ok || got.Name() != "ember" {
-		t.Fatalf("ToneByName ember failed")
+	got, ok := utils.ToneByName(all, "confirmed")
+	if !ok || got.Name() != "confirmed" {
+		t.Fatalf("ToneByName confirmed failed")
 	}
 	if utils.HasTone(all, "nope") {
 		t.Error("HasTone should be false for missing")
@@ -38,9 +38,9 @@ func TestSliceHelpers(t *testing.T) {
 
 func TestPaletteByName(t *testing.T) {
 	all := palettes.All()
-	p, ok := utils.PaletteByName(all, "lera")
-	if !ok || p.Name() != "lera" {
-		t.Fatal("PaletteByName lera failed")
+	p, ok := utils.PaletteByName(all, "spectrum")
+	if !ok || p.Name() != "spectrum" {
+		t.Fatal("PaletteByName spectrum failed")
 	}
 	names := utils.PaletteNames(all)
 	if len(names) != len(all) {

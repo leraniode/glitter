@@ -24,7 +24,7 @@ func TestMergeTones(t *testing.T) {
 
 func TestGradientBetween(t *testing.T) {
 	list := palettes.Leraniode.All()
-	g, err := utils.GradientBetween(list, "niode", "lera", 5)
+	g, err := utils.GradientBetween(list, "spectrum.violet", "spectrum.pink", 5)
 	if err != nil {
 		t.Fatal(err)
 	}
@@ -34,15 +34,15 @@ func TestGradientBetween(t *testing.T) {
 }
 
 func TestBuildPalette(t *testing.T) {
-	subset := utils.ByMood(tones.All(), "warm")
-	p, err := utils.BuildPalette("warm-accents", subset,
-		utils.WithDescription("warm only"),
+	subset := utils.ByMood(tones.All(), "quiet")
+	p, err := utils.BuildPalette("quiet-neutrals", subset,
+		utils.WithDescription("quiet only"),
 		utils.WithAuthor("test"),
 	)
 	if err != nil {
 		t.Fatal(err)
 	}
-	if p.Name() != "warm-accents" {
+	if p.Name() != "quiet-neutrals" {
 		t.Errorf("name = %q", p.Name())
 	}
 	if len(p.All()) != len(subset) {

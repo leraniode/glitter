@@ -9,15 +9,15 @@ import (
 )
 
 func TestCSSVariables(t *testing.T) {
-	css := utils.CSSVariables(palettes.LeraScale.All(), utils.CSSOptions{
-		Prefix: "--lera-",
+	css := utils.CSSVariables(palettes.Spectrum.All(), utils.CSSOptions{
+		Prefix: "--spectrum-",
 		Format: "hex",
 	})
 	if !strings.Contains(css, ":root") {
 		t.Error("expected :root selector")
 	}
-	if !strings.Contains(css, "--lera-lera:") {
-		t.Error("expected --lera-lera variable")
+	if !strings.Contains(css, "--spectrum-spectrum-violet:") {
+		t.Error("expected --spectrum-spectrum-violet variable")
 	}
 	if !strings.Contains(css, "#") {
 		t.Error("expected hex values")
@@ -25,7 +25,7 @@ func TestCSSVariables(t *testing.T) {
 }
 
 func TestCSSOKLCH(t *testing.T) {
-	css := utils.CSSVariables(palettes.NiodeScale.All(), utils.CSSOptions{
+	css := utils.CSSVariables(palettes.Spectrum.All(), utils.CSSOptions{
 		Format: "oklch",
 	})
 	if !strings.Contains(css, "oklch(") {
@@ -34,14 +34,14 @@ func TestCSSOKLCH(t *testing.T) {
 }
 
 func TestSCSSMap(t *testing.T) {
-	scss := utils.SCSSMap(palettes.Clarity.All(), "clarity", utils.CSSOptions{})
-	if !strings.HasPrefix(scss, "$clarity:") {
-		t.Error("expected $clarity map")
+	scss := utils.SCSSMap(palettes.Spectrum.All(), "spectrum", utils.CSSOptions{})
+	if !strings.HasPrefix(scss, "$spectrum:") {
+		t.Error("expected $spectrum map")
 	}
 }
 
 func TestTailwindTheme(t *testing.T) {
-	tw := utils.TailwindTheme(palettes.LeraScale.All(), utils.CSSOptions{})
+	tw := utils.TailwindTheme(palettes.Spectrum.All(), utils.CSSOptions{})
 	if !strings.Contains(tw, "--color-") {
 		t.Error("expected --color- prefix")
 	}

@@ -6,43 +6,30 @@ import (
 )
 
 // Leraniode is the official base palette of the Leraniode organization.
-// Identity: Lera (core pink) + Niode (core purple) + Clarity (blended cyan-blue).
-// Accents: warm and cool tones with unique Leraniode names.
-// Neutrals: violet-tinted, darker than standard palettes.
+// Identity: the Spectrum arc (cyan through pink, one continuous line).
+// Accent: Confirmed — the one deliberate exception, reserved for proven states.
+// Neutrals: a seven-step dark-only scale sharing the arc's violet hue.
 var Leraniode = register(palette.New("leraniode").
 	Description("The official Leraniode base palette. Foundation for all Leraniode products.").
 	Author("Leraniode").
-	Version("0.1.0").
+	Version("0.2.0").
 
-	// — Identity cores —
-	Add(lera).
-	Add(niode).
-	Add(claritySky).
+	// — Identity arc —
+	Add(spectrumCyan).
+	Add(spectrumBlue).
+	Add(spectrumIndigo).
+	Add(spectrumViolet).
+	Add(spectrumPink).
 
-	// — Warm accents —
-	Add(tones.Ember).
-	Add(tones.Blaze).
-	Add(tones.Dusk).
-	Add(tones.Sol).
-	Add(tones.Grove).
-
-	// — Cool accents —
-	Add(tones.Frost).
-	Add(tones.Streak).
-	Add(tones.Arc).
-	Add(tones.Void).
+	// — Deliberate exception —
+	Add(tones.Confirmed).
 
 	// — Neutral scale —
-	Add(tones.Ink).
-	Add(tones.Mute).
-	Add(tones.Ash).
-	Add(tones.Dim).
-	Add(tones.Haze).
-	Add(tones.Ghost).
-	Add(tones.Rim).
-	Add(tones.Shell).
-	Add(tones.Veil).
-	Add(tones.Slate).
-	Add(tones.Deep).
-	Add(tones.Abyss).
+	Add(tones.Page).
+	Add(tones.Panel).
+	Add(tones.Surface).
+	Add(tones.Border).
+	Add(tones.Muted).
+	Add(tones.Secondary).
+	Add(tones.Primary).
 	MustBuild())

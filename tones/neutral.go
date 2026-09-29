@@ -39,7 +39,7 @@ var Surface = register(tone.New(
 
 // Border is a hairline or dividing edge.
 var Border = register(tone.New(
-	tone.Light(28),
+	tone.Light(52),
 	tone.Vibrancy(10),
 	tone.Hue(296),
 	tone.Moody("quiet"),

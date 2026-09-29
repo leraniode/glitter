@@ -4,6 +4,7 @@ import (
 	"testing"
 
 	"github.com/leraniode/glitter/palettes"
+	"github.com/leraniode/glitter/tones"
 )
 
 func TestAll(t *testing.T) {
@@ -53,5 +54,19 @@ func TestGradientIsComputed(t *testing.T) {
 		if tn.Vibrancy() < 60 {
 			t.Errorf("stop at hue %.0f desaturated to vibrancy %.0f — gradient is cutting through the middle again", tn.Hue(), tn.Vibrancy())
 		}
+	}
+}
+
+func TestDeepenTowardNeutral(t *testing.T) {
+	violet := palettes.Spectrum.All()[3] // spectrum.violet
+	deep := palettes.Deepen(violet, 0.65)
+	if deep.Light() >= violet.Light() {
+		t.Errorf("expected Deepen to lower Light, got %.0f -> %.0f", violet.Light(), deep.Light())
+	}
+	if deep.Vibrancy() >= violet.Vibrancy() {
+		t.Errorf("expected Deepen to desaturate toward the neutral, got V%.0f -> V%.0f", violet.Vibrancy(), deep.Vibrancy())
+	}
+	if full := palettes.Deepen(violet, 1.0); full.Hex() != tones.Page.Hex() {
+		t.Errorf("Deepen at amount=1 should equal neutral.page, got %s", full.Hex())
 	}
 }

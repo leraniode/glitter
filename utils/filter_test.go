@@ -54,9 +54,9 @@ func TestNames(t *testing.T) {
 
 func TestFind(t *testing.T) {
 	got, ok := utils.Find(tones.All(), func(tn tone.Tone) bool {
-		return tn.Name() == "confirmed"
+		return tn.Name() == "tone.red"
 	})
-	if !ok || got.Name() != "confirmed" {
-		t.Errorf("Find confirmed failed")
+	if !ok || got.Name() != "tone.red" {
+		t.Errorf("Find tone.red failed")
 	}
 }

@@ -13,7 +13,8 @@ import (
 // tones here is arithmetic, not chosen by eye — that's the whole point.
 //
 // Anything that isn't part of the arc's own math doesn't belong in it.
-// See tones.Confirmed for the one deliberate exception.
+// Violet and pink are the org's own reserved range — see ProductTones
+// for what products actually get assigned.
 
 var spectrumCyan = tone.New(
 	tone.Light(64),

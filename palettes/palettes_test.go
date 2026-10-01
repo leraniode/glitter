@@ -24,7 +24,7 @@ func TestAll(t *testing.T) {
 
 func TestLeraniodeContainsCores(t *testing.T) {
 	p := palettes.Leraniode
-	for _, name := range []string{"spectrum.violet", "spectrum.cyan", "confirmed", "neutral.page", "neutral.primary"} {
+	for _, name := range []string{"spectrum.violet", "spectrum.cyan", "tone.green", "tone.red", "neutral.page", "neutral.primary"} {
 		if !p.Has(name) {
 			t.Errorf("Leraniode missing tone %q", name)
 		}

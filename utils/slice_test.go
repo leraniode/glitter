@@ -10,9 +10,9 @@ import (
 
 func TestToneByName(t *testing.T) {
 	all := tones.All()
-	got, ok := utils.ToneByName(all, "confirmed")
-	if !ok || got.Name() != "confirmed" {
-		t.Fatalf("ToneByName confirmed failed")
+	got, ok := utils.ToneByName(all, "tone.red")
+	if !ok || got.Name() != "tone.red" {
+		t.Fatalf("ToneByName tone.red failed")
 	}
 	if utils.HasTone(all, "nope") {
 		t.Error("HasTone should be false for missing")

@@ -17,7 +17,7 @@ func TestKnownTonesPresent(t *testing.T) {
 	for _, tn := range tones.All() {
 		names[tn.Name()] = true
 	}
-	for _, want := range []string{"neutral.page", "neutral.primary", "confirmed"} {
+	for _, want := range []string{"neutral.page", "neutral.primary", "tone.green", "tone.red"} {
 		if !names[want] {
 			t.Errorf("expected tone %q to be registered", want)
 		}
